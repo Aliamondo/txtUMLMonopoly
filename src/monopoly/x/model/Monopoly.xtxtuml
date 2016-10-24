@@ -1,0 +1,414 @@
+package monopoly.x.model;
+
+import monopoly.x.CardsInterface;
+import monopoly.x.GUIInterface;
+import monopoly.x.RandomInterface;
+
+signal Move {
+	int cellsToMove;
+}
+
+class Game {
+	GUIInterface gui;
+	int numOfPlayers;
+	int totalNumber;
+	
+	Game(int numOfPlayers, GUIInterface gui) {
+		this.gui = gui;
+		this.numOfPlayers = numOfPlayers;
+		log("Created a new game with " + numOfPlayers + " players.");
+	}
+	
+	initial Init;
+	state Playing;
+	state MakingMove;
+	
+	transition StartGame {
+		from Init;
+		to Playing;
+		effect {
+			log("Started the game");
+		}
+	}
+	
+	transition StartAMove {
+		from Playing;
+		to MakingMove;
+		trigger Move;
+		effect {
+//			log("Dice 1: " + trigger.cellsToMove);
+			totalNumber = trigger.cellsToMove;
+		}
+	}
+	
+	transition MakeAMove {
+		from MakingMove;
+		to Playing;
+		trigger Move;
+		effect {
+//			log("Dice 2: " + trigger.cellsToMove);
+			gui.showDice(totalNumber, trigger.cellsToMove);
+			Player player = Game.this -> (GamePlayers.player).selectAny();
+			if (totalNumber == trigger.cellsToMove) {
+				if (player.numberOfDoubles < 2) {
+//					log("Threw doubles, got an extra move");
+					player.numberOfDoubles++;
+				}
+				else {
+//					log("Threw doubles for a third time, going to Jail");
+					player.numberOfDoubles = 0;
+				}
+			}
+			else {
+				player.numberOfDoubles = 0;
+			}
+			totalNumber += trigger.cellsToMove;
+			send new Move(totalNumber) to player;
+		}
+	}
+}
+
+signal NewCellAdded;
+
+class Board {
+	int numOfCells;
+	int emptyCells;
+	CardsInterface communityChestCards;
+	CardsInterface chanceCards;
+	
+	Board(CardsInterface communityChestCards, CardsInterface chanceCards) {
+		this.numOfCells = 40; // Exactly 40 cells on the board
+		this.emptyCells = 40; // And all of them are empty
+		this.communityChestCards = communityChestCards;
+		this.chanceCards = chanceCards;
+		log("New board created");
+	}
+		
+	int validateMove(int newPos) {
+		Game game = this -> (GameBoard.game).selectAny();
+		if (newPos == 30) {
+			log("Landed on \"Go to jail\", moving to Jail");
+			game.gui.showOriginalPlayer(newPos);
+			return 10; //If landed on "Go to jail" cell (index 30), the users moves on "Jail" cell (index 10)
+		}
+		else if (newPos == 2 || newPos == 17 || newPos == 33) {
+//			log("Landed on Chest Community card");
+			int card = communityChestCards.nextCard();
+			if (card >= 0) {
+				log("Chest Community card: Go to " + card);
+				game.gui.showOriginalPlayer(newPos);
+				return card;
+			}
+		}
+		else if (newPos == 7 || newPos == 22 || newPos == 36) {
+//			log("Landed on Chance card");
+			int card = chanceCards.nextCard();
+			if (card >= 0) {
+				log("Chance card: Go to " + card);
+				game.gui.showOriginalPlayer(newPos);
+				return card;
+			}
+			else if (card == -3) { // Go 3 steps back
+				log("Chance card: Go 3 steps back");
+				game.gui.showOriginalPlayer(newPos);
+				return newPos - 3;
+			}
+		}
+		game.gui.showOriginalPlayer(-1); // We want to hide the grayed icon next turn
+		return newPos;
+	}
+	
+	initial Init;
+	state Filling;
+	state Playing;
+	
+	transition StartFillingBoard {
+		from Init;
+		to Filling;
+		effect {
+			log("Started filling the board");
+		}
+	}
+	
+	transition AddCell {
+		from Filling;
+		to Filling;
+		trigger NewCellAdded;
+		guard(Board.this.emptyCells > 1);
+		effect {
+			Board.this.emptyCells--;
+//			log("Added a cell (theoretically). Cells to fill left: " + Board.this.emptyCells);
+		}
+	}
+
+	transition StopFillingBoard {
+		from Filling;
+		to Playing;
+		trigger NewCellAdded;
+		guard(Board.this.emptyCells <= 1);
+		effect {
+			log("Board filled");
+		}
+	}
+}
+
+class Cell {
+	String name;
+	Cell(String name) {
+		this.name = name;
+	}
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			log("Trying to add a new cell");
+		}
+	}
+}
+
+class CompanyCell extends Cell {
+	int cost;
+	
+	CompanyCell(int cost, String name) {
+		super(name);
+		this.cost = cost;
+	}
+
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			Board board = CompanyCell.this->(CompanyCellsOnBoard.board).selectAny();
+			log("Added a new cell named " + name + ", with a cost of " + cost);
+			send new NewCellAdded() to board;
+		}
+	}
+}
+
+class JailCell extends Cell {
+	JailCell() {
+		super("Jail");
+	}
+	
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			Board board = JailCell.this->(JailCellsOnBoard.board).selectAny();
+			log("Added a Jail cell");
+			send new NewCellAdded() to board;
+		}
+	}
+}
+
+class GoToJailCell extends Cell {
+	GoToJailCell() {
+		super("Jail");
+	}
+	
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			Board board = GoToJailCell.this->(GoToJailCellsOnBoard.board).selectAny();
+			log("Added a Go To Jail cell");
+			send new NewCellAdded() to board;
+		}
+	}
+}
+
+class StartCell extends Cell {
+	StartCell() {
+		super("Start");
+	}
+	
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			Board board = StartCell.this->(StartCellsOnBoard.board).selectAny();
+			log("Added a Start cell");
+			send new NewCellAdded() to board;
+		}
+	}
+}
+
+class CardCell extends Cell {
+	String msg;
+	CardCell(String cardType, String msg) {
+		super(cardType);
+		this.msg = msg;
+	}
+}
+
+class CommunityChestCardCell extends CardCell {
+	CommunityChestCardCell(String msg) {
+		super("Community card", msg);
+	}
+	
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			Board board = CommunityChestCardCell.this->(CommunityChestCardCellsOnBoard.board).selectAny();
+			log("Added a Community Chest card cell");
+			send new NewCellAdded() to board;
+		}
+	}
+}
+class ChanceCardCell extends CardCell {
+	ChanceCardCell(String msg) {
+		super("Chance card", msg);
+	}
+	
+	initial Init;
+	state New;
+	
+	transition Initialize {
+		from Init;
+		to New;
+		effect {
+			Board board = ChanceCardCell.this->(ChanceCardCellsOnBoard.board).selectAny();
+			log("Added a Chance card cell");
+			send new NewCellAdded() to board;
+		}
+	}
+}
+
+signal ThrowDice;
+class Dice {
+	private int sides;
+	RandomInterface random;
+	
+	Dice(int sides, RandomInterface random) {
+		this.sides = sides;
+		this.random = random;
+//		log("Created a new dice with " + sides + " sides");
+	}
+	
+	initial Init;
+	state Active;
+	
+	transition Initialize {
+		from Init;
+		to Active;
+		effect {
+			log("Initialized a dice");
+		}
+	}
+	
+	transition ThrowDice {
+		from Active;
+		to Active;
+		trigger ThrowDice;
+		effect {
+			send new Move(random.nextInt(1, sides)) to Dice.this->(GameDice.game).selectAny();
+		}
+	}
+}
+
+class Player {
+	int pos; // The position of player on the board; equals to cell index
+	int numberOfCells;
+	int numberOfDoubles;
+	
+	Player() {
+		log("New player created");
+		pos = 0;
+		numberOfDoubles = 0;
+	}
+	
+	initial Init;
+	state Playing;
+	
+	transition Initialize {
+		from Init;
+		to Playing;
+		effect {
+			log("Initialized a player");
+			Board board = Player.this -> (GamePlayers.game).selectAny() -> (GameBoard.board).selectAny();
+			numberOfCells  = board -> (CompanyCellsOnBoard.cell).count();
+			numberOfCells += board -> (JailCellsOnBoard.cell).count();
+			numberOfCells += board -> (StartCellsOnBoard.cell).count();
+			numberOfCells += board -> (CommunityChestCardCellsOnBoard.cell).count();
+			numberOfCells += board -> (ChanceCardCellsOnBoard.cell).count();
+			numberOfCells += board -> (GoToJailCellsOnBoard.cell).count();
+		}
+	}
+	
+	transition MakeAMove {
+		from Playing;
+		to Playing;
+		trigger Move;
+		effect {
+//			log("Move for " + trigger.cellsToMove);
+			Board board = Player.this -> (GamePlayers.game).selectAny() -> (GameBoard.board).selectAny();
+			pos = board.validateMove((pos + trigger.cellsToMove) % numberOfCells);
+			this -> (GamePlayers.game).selectAny().gui.showPlayer(pos);
+//			log("New position is: " + pos);
+		}
+	}
+}
+
+association GameBoard {
+	0..1 Game game;
+	1 Board board;
+}
+
+association GameDice {
+	1 Game game;
+	2 Dice dice;
+}
+
+association GamePlayers {
+	1 Game game;
+	2..4 Player player;
+}
+
+composition CompanyCellsOnBoard {
+	32 CompanyCell cell;
+	container Board board;
+}
+
+composition StartCellsOnBoard {
+	1 StartCell cell;
+	container Board board;
+}
+
+composition JailCellsOnBoard {
+	1 JailCell cell;
+	container Board board;
+}
+
+composition GoToJailCellsOnBoard {
+	1 GoToJailCell cell;
+	container Board board;
+}
+
+composition CommunityChestCardCellsOnBoard {
+	3 CommunityChestCardCell cell;
+	container Board board;
+}
+
+composition ChanceCardCellsOnBoard {
+	3 ChanceCardCell cell;
+	container Board board;
+}

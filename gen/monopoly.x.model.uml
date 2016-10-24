@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_8q61AJU1EeaIOf0FUcQypA" name="Monopoly">
+    <packageImport xmi:id="_8rAUkJU1EeaIOf0FUcQypA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://TXTUML_STDLIB/stdlib.uml#_DE5UMHLCEeWVx4ZuxFlarQ"/>
+    </packageImport>
+    <packageImport xmi:id="_8rW54JU1EeaIOf0FUcQypA">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8tV24JU1EeaIOf0FUcQypA" name="Board" classifierBehavior="_8t7sxJU1EeaIOf0FUcQypA">
+      <ownedAttribute xmi:id="_8tWd8JU1EeaIOf0FUcQypA" name="chanceCards"/>
+      <ownedAttribute xmi:id="_8tfn4JU1EeaIOf0FUcQypA" name="communityChestCards"/>
+      <ownedAttribute xmi:id="_8tm8oJU1EeaIOf0FUcQypA" name="emptyCells">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8tm8oZU1EeaIOf0FUcQypA" name="numOfCells">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8uLkYZU1EeaIOf0FUcQypA" name="cell" type="_8uFdwJU1EeaIOf0FUcQypA" aggregation="composite" association="_8uLkYJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uLkYpU1EeaIOf0FUcQypA" value="3"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uMLcJU1EeaIOf0FUcQypA" value="3"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8uVVYJU1EeaIOf0FUcQypA" name="cell" type="_8uOnsJU1EeaIOf0FUcQypA" aggregation="composite" association="_8uUuUJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uVVYZU1EeaIOf0FUcQypA" value="3"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uVVYpU1EeaIOf0FUcQypA" value="3"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8ugUgJU1EeaIOf0FUcQypA" name="cell" type="_8ucqIJU1EeaIOf0FUcQypA" aggregation="composite" association="_8uftcJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8ugUgZU1EeaIOf0FUcQypA" value="32"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8ugUgpU1EeaIOf0FUcQypA" value="32"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vRJgJU1EeaIOf0FUcQypA" name="game" type="_8u5WEJU1EeaIOf0FUcQypA" association="_8vQicJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vRJgZU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vRJgpU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vcvsJU1EeaIOf0FUcQypA" name="cell" type="_8vZsYJU1EeaIOf0FUcQypA" aggregation="composite" association="_8vcIoJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vcvsZU1EeaIOf0FUcQypA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vcvspU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vmgsJU1EeaIOf0FUcQypA" name="cell" type="_8vhBIJU1EeaIOf0FUcQypA" aggregation="composite" association="_8vl5oJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vmgsZU1EeaIOf0FUcQypA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vnHwJU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8v7Q0JU1EeaIOf0FUcQypA" name="cell" type="_8v4NgJU1EeaIOf0FUcQypA" aggregation="composite" association="_8v6pwJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8v7Q0ZU1EeaIOf0FUcQypA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8v7Q0pU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8t7sxJU1EeaIOf0FUcQypA" name="Board">
+        <region xmi:id="_8t8T0JU1EeaIOf0FUcQypA" name="Board">
+          <transition xmi:id="_8t8T1JU1EeaIOf0FUcQypA" name="StartFillingBoard" source="_8t8T0ZU1EeaIOf0FUcQypA" target="_8t8T0pU1EeaIOf0FUcQypA"/>
+          <transition xmi:id="_8t8T1ZU1EeaIOf0FUcQypA" name="AddCell" source="_8t8T0pU1EeaIOf0FUcQypA" target="_8t8T0pU1EeaIOf0FUcQypA">
+            <trigger xmi:id="_8t8T1pU1EeaIOf0FUcQypA" name="null_trigger" event="_8vvDkZU1EeaIOf0FUcQypA"/>
+          </transition>
+          <transition xmi:id="_8t864JU1EeaIOf0FUcQypA" name="StopFillingBoard" source="_8t8T0pU1EeaIOf0FUcQypA" target="_8t8T05U1EeaIOf0FUcQypA">
+            <trigger xmi:id="_8t864ZU1EeaIOf0FUcQypA" name="null_trigger" event="_8vvDkZU1EeaIOf0FUcQypA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8t8T0ZU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8t8T0pU1EeaIOf0FUcQypA" name="Filling"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8t8T05U1EeaIOf0FUcQypA" name="Playing"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8tm8opU1EeaIOf0FUcQypA" name="Board">
+        <ownedParameter xmi:id="_8t7FsJU1EeaIOf0FUcQypA" name="communityChestCards"/>
+        <ownedParameter xmi:id="_8t7FsZU1EeaIOf0FUcQypA" name="chanceCards"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_8t7swZU1EeaIOf0FUcQypA" name="validateMove">
+        <ownedParameter xmi:id="_8t7swpU1EeaIOf0FUcQypA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_8t7sw5U1EeaIOf0FUcQypA" name="newPos">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8t-wEJU1EeaIOf0FUcQypA" name="CardCell">
+      <generalization xmi:id="_8t_XI5U1EeaIOf0FUcQypA" general="_8uBzYJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8t-wEZU1EeaIOf0FUcQypA" name="msg">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_8t-wEpU1EeaIOf0FUcQypA" name="CardCell">
+        <ownedParameter xmi:id="_8t_XIJU1EeaIOf0FUcQypA" name="cardType">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_8t_XIZU1EeaIOf0FUcQypA" name="msg">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8uBzYJU1EeaIOf0FUcQypA" name="Cell" classifierBehavior="_8uCacJU1EeaIOf0FUcQypA">
+      <ownedAttribute xmi:id="_8uBzYZU1EeaIOf0FUcQypA" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8uCacJU1EeaIOf0FUcQypA" name="Cell">
+        <region xmi:id="_8uCacZU1EeaIOf0FUcQypA" name="Cell">
+          <transition xmi:id="_8uCadJU1EeaIOf0FUcQypA" name="Initialize" source="_8uCacpU1EeaIOf0FUcQypA" target="_8uCac5U1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8uCacpU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8uCac5U1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8uBzYpU1EeaIOf0FUcQypA" name="Cell">
+        <ownedParameter xmi:id="_8uBzY5U1EeaIOf0FUcQypA" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8uFdwJU1EeaIOf0FUcQypA" name="ChanceCardCell" classifierBehavior="_8uGE05U1EeaIOf0FUcQypA">
+      <generalization xmi:id="_8uGE0pU1EeaIOf0FUcQypA" general="_8t-wEJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8uMLcZU1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8uLkYJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uMLcpU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uMLc5U1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8uGE05U1EeaIOf0FUcQypA" name="ChanceCardCell">
+        <region xmi:id="_8uGE1JU1EeaIOf0FUcQypA" name="ChanceCardCell">
+          <transition xmi:id="_8uGr4pU1EeaIOf0FUcQypA" name="Initialize" source="_8uGr4JU1EeaIOf0FUcQypA" target="_8uGr4ZU1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8uGr4JU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8uGr4ZU1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8uFdwZU1EeaIOf0FUcQypA" name="ChanceCardCell" redefinedOperation="_8uBzYpU1EeaIOf0FUcQypA">
+        <ownedParameter xmi:id="_8uGE0JU1EeaIOf0FUcQypA" name="msg">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8uLkYJU1EeaIOf0FUcQypA" name="ChanceCardCellsOnBoard" memberEnd="_8uLkYZU1EeaIOf0FUcQypA _8uMLcZU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8uOnsJU1EeaIOf0FUcQypA" name="CommunityChestCardCell" classifierBehavior="_8uP10ZU1EeaIOf0FUcQypA">
+      <generalization xmi:id="_8uP10JU1EeaIOf0FUcQypA" general="_8t-wEJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8uVVY5U1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8uUuUJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uVVZJU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uVVZZU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8uP10ZU1EeaIOf0FUcQypA" name="CommunityChestCardCell">
+        <region xmi:id="_8uP10pU1EeaIOf0FUcQypA" name="CommunityChestCardCell">
+          <transition xmi:id="_8uQc4pU1EeaIOf0FUcQypA" name="Initialize" source="_8uQc4JU1EeaIOf0FUcQypA" target="_8uQc4ZU1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8uQc4JU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8uQc4ZU1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8uPOwJU1EeaIOf0FUcQypA" name="CommunityChestCardCell" redefinedOperation="_8uBzYpU1EeaIOf0FUcQypA">
+        <ownedParameter xmi:id="_8uPOwZU1EeaIOf0FUcQypA" name="msg">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8uUuUJU1EeaIOf0FUcQypA" name="CommunityChestCardCellsOnBoard" memberEnd="_8uVVYJU1EeaIOf0FUcQypA _8uVVY5U1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8ucqIJU1EeaIOf0FUcQypA" name="CompanyCell" classifierBehavior="_8udRMpU1EeaIOf0FUcQypA">
+      <generalization xmi:id="_8udRMZU1EeaIOf0FUcQypA" general="_8uBzYJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8ucqIZU1EeaIOf0FUcQypA" name="cost">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8ugUg5U1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8uftcJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8ugUhJU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8ugUhZU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8udRMpU1EeaIOf0FUcQypA" name="CompanyCell">
+        <region xmi:id="_8udRM5U1EeaIOf0FUcQypA" name="CompanyCell">
+          <transition xmi:id="_8ud4QpU1EeaIOf0FUcQypA" name="Initialize" source="_8ud4QJU1EeaIOf0FUcQypA" target="_8ud4QZU1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8ud4QJU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8ud4QZU1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8ucqIpU1EeaIOf0FUcQypA" name="CompanyCell">
+        <ownedParameter xmi:id="_8ucqI5U1EeaIOf0FUcQypA" name="cost">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_8ucqJJU1EeaIOf0FUcQypA" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8uftcJU1EeaIOf0FUcQypA" name="CompanyCellsOnBoard" memberEnd="_8ugUgJU1EeaIOf0FUcQypA _8ugUg5U1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8ujX0JU1EeaIOf0FUcQypA" name="Dice" classifierBehavior="_8u0dkJU1EeaIOf0FUcQypA">
+      <ownedAttribute xmi:id="_8ujX0ZU1EeaIOf0FUcQypA" name="random"/>
+      <ownedAttribute xmi:id="_8uqskJU1EeaIOf0FUcQypA" name="sides">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vS-sZU1EeaIOf0FUcQypA" name="game" type="_8u5WEJU1EeaIOf0FUcQypA" association="_8vS-sJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vTlwJU1EeaIOf0FUcQypA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vTlwZU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8u0dkJU1EeaIOf0FUcQypA" name="Dice">
+        <region xmi:id="_8u0dkZU1EeaIOf0FUcQypA" name="Dice">
+          <transition xmi:id="_8u0dlJU1EeaIOf0FUcQypA" name="Initialize" source="_8u0dkpU1EeaIOf0FUcQypA" target="_8u0dk5U1EeaIOf0FUcQypA"/>
+          <transition xmi:id="_8u0dlZU1EeaIOf0FUcQypA" name="ThrowDice" source="_8u0dk5U1EeaIOf0FUcQypA" target="_8u0dk5U1EeaIOf0FUcQypA">
+            <trigger xmi:id="_8u0dlpU1EeaIOf0FUcQypA" name="null_trigger" event="_8v8e8ZU1EeaIOf0FUcQypA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8u0dkpU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8u0dk5U1EeaIOf0FUcQypA" name="Active"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8uqskZU1EeaIOf0FUcQypA" name="Dice">
+        <ownedParameter xmi:id="_8uz2gJU1EeaIOf0FUcQypA" name="sides">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_8uz2gZU1EeaIOf0FUcQypA" name="random"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8u5WEJU1EeaIOf0FUcQypA" name="Game" classifierBehavior="_8vOGMpU1EeaIOf0FUcQypA">
+      <ownedAttribute xmi:id="_8u5WEZU1EeaIOf0FUcQypA" name="gui"/>
+      <ownedAttribute xmi:id="_8vEVMJU1EeaIOf0FUcQypA" name="numOfPlayers">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vEVMZU1EeaIOf0FUcQypA" name="totalNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vRJg5U1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8vQicJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vRJhJU1EeaIOf0FUcQypA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vRJhZU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vTlwpU1EeaIOf0FUcQypA" name="dice" type="_8ujX0JU1EeaIOf0FUcQypA" association="_8vS-sJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vTlw5U1EeaIOf0FUcQypA" value="2"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vTlxJU1EeaIOf0FUcQypA" value="2"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8vVa8ZU1EeaIOf0FUcQypA" name="player" type="_8v0jIJU1EeaIOf0FUcQypA" association="_8vVa8JU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vWCAJU1EeaIOf0FUcQypA" value="2"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vWCAZU1EeaIOf0FUcQypA" value="4"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8vOGMpU1EeaIOf0FUcQypA" name="Game">
+        <region xmi:id="_8vOGM5U1EeaIOf0FUcQypA" name="Game">
+          <transition xmi:id="_8vOtQpU1EeaIOf0FUcQypA" name="StartGame" source="_8vOGNJU1EeaIOf0FUcQypA" target="_8vOtQJU1EeaIOf0FUcQypA"/>
+          <transition xmi:id="_8vOtQ5U1EeaIOf0FUcQypA" name="StartAMove" source="_8vOtQJU1EeaIOf0FUcQypA" target="_8vOtQZU1EeaIOf0FUcQypA">
+            <trigger xmi:id="_8vOtRJU1EeaIOf0FUcQypA" name="null_trigger" event="_8vpkApU1EeaIOf0FUcQypA"/>
+          </transition>
+          <transition xmi:id="_8vOtRZU1EeaIOf0FUcQypA" name="MakeAMove" source="_8vOtQZU1EeaIOf0FUcQypA" target="_8vOtQJU1EeaIOf0FUcQypA">
+            <trigger xmi:id="_8vOtRpU1EeaIOf0FUcQypA" name="null_trigger" event="_8vpkApU1EeaIOf0FUcQypA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8vOGNJU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8vOtQJU1EeaIOf0FUcQypA" name="Playing"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8vOtQZU1EeaIOf0FUcQypA" name="MakingMove"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8vEVMpU1EeaIOf0FUcQypA" name="Game">
+        <ownedParameter xmi:id="_8vNfIJU1EeaIOf0FUcQypA" name="numOfPlayers">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_8vOGMJU1EeaIOf0FUcQypA" name="gui"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8vQicJU1EeaIOf0FUcQypA" name="GameBoard" memberEnd="_8vRJgJU1EeaIOf0FUcQypA _8vRJg5U1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8vS-sJU1EeaIOf0FUcQypA" name="GameDice" memberEnd="_8vS-sZU1EeaIOf0FUcQypA _8vTlwpU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8vVa8JU1EeaIOf0FUcQypA" name="GamePlayers" memberEnd="_8v0jIZU1EeaIOf0FUcQypA _8vVa8ZU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8vZsYJU1EeaIOf0FUcQypA" name="GoToJailCell" classifierBehavior="_8vZsZJU1EeaIOf0FUcQypA">
+      <generalization xmi:id="_8vZsY5U1EeaIOf0FUcQypA" general="_8uBzYJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8vcvs5U1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8vcIoJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vcvtJU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vcvtZU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8vZsZJU1EeaIOf0FUcQypA" name="GoToJailCell">
+        <region xmi:id="_8vZsZZU1EeaIOf0FUcQypA" name="GoToJailCell">
+          <transition xmi:id="_8vaTcpU1EeaIOf0FUcQypA" name="Initialize" source="_8vaTcJU1EeaIOf0FUcQypA" target="_8vaTcZU1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8vaTcJU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8vaTcZU1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8vZsYZU1EeaIOf0FUcQypA" name="GoToJailCell"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8vcIoJU1EeaIOf0FUcQypA" name="GoToJailCellsOnBoard" memberEnd="_8vcvsJU1EeaIOf0FUcQypA _8vcvs5U1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8vhBIJU1EeaIOf0FUcQypA" name="JailCell" classifierBehavior="_8vhoMpU1EeaIOf0FUcQypA">
+      <generalization xmi:id="_8vhoMZU1EeaIOf0FUcQypA" general="_8uBzYJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8vnHwZU1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8vl5oJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8vnHwpU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8vnHw5U1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8vhoMpU1EeaIOf0FUcQypA" name="JailCell">
+        <region xmi:id="_8vhoM5U1EeaIOf0FUcQypA" name="JailCell">
+          <transition xmi:id="_8viPQZU1EeaIOf0FUcQypA" name="Initialize" source="_8vhoNJU1EeaIOf0FUcQypA" target="_8viPQJU1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8vhoNJU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8viPQJU1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8vhBIZU1EeaIOf0FUcQypA" name="JailCell"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8vl5oJU1EeaIOf0FUcQypA" name="JailCellsOnBoard" memberEnd="_8vmgsJU1EeaIOf0FUcQypA _8vnHwZU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_8vpkAJU1EeaIOf0FUcQypA" name="Move">
+      <ownedAttribute xmi:id="_8vpkAZU1EeaIOf0FUcQypA" name="cellsToMove">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_8vpkApU1EeaIOf0FUcQypA" name="Move" signal="_8vpkAJU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8vqLEJU1EeaIOf0FUcQypA" name="#Move_factory">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_8vrZMZU1EeaIOf0FUcQypA" name="Move" specification="_8vqLEZU1EeaIOf0FUcQypA" node="_8vrZMpU1EeaIOf0FUcQypA _8vrZNZU1EeaIOf0FUcQypA _8vrZNpU1EeaIOf0FUcQypA _8vsAQpU1EeaIOf0FUcQypA _8vsARpU1EeaIOf0FUcQypA _8vsnY5U1EeaIOf0FUcQypA _8vsnZJU1EeaIOf0FUcQypA">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_8vsnZZU1EeaIOf0FUcQypA" name="#init~~>null" target="_8vrZNZU1EeaIOf0FUcQypA" source="_8vrZMpU1EeaIOf0FUcQypA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_8vtOYJU1EeaIOf0FUcQypA" name="null~~>#body" target="_8vsARpU1EeaIOf0FUcQypA" source="_8vrZNZU1EeaIOf0FUcQypA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_8vtOYZU1EeaIOf0FUcQypA" name="#body~~>#finish" target="_8vsnY5U1EeaIOf0FUcQypA" source="_8vsARpU1EeaIOf0FUcQypA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_8vtOYpU1EeaIOf0FUcQypA" name="#finish~~>#final" target="_8vsnZJU1EeaIOf0FUcQypA" source="_8vsnY5U1EeaIOf0FUcQypA"/>
+        <variable xmi:id="_8vrZM5U1EeaIOf0FUcQypA" name="signal" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+        <variable xmi:id="_8vrZNJU1EeaIOf0FUcQypA" name="cellsToMove">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </variable>
+        <node xmi:type="uml:InitialNode" xmi:id="_8vrZMpU1EeaIOf0FUcQypA" name="#init" outgoing="_8vsnZZU1EeaIOf0FUcQypA"/>
+        <node xmi:type="uml:SequenceNode" xmi:id="_8vrZNZU1EeaIOf0FUcQypA" incoming="_8vsnZZU1EeaIOf0FUcQypA" outgoing="_8vtOYJU1EeaIOf0FUcQypA">
+          <edge xmi:type="uml:ObjectFlow" xmi:id="_8vrZN5U1EeaIOf0FUcQypA" name="signal==>new_value" target="_8vsAQZU1EeaIOf0FUcQypA" source="_8vrZNpU1EeaIOf0FUcQypA"/>
+          <edge xmi:type="uml:ObjectFlow" xmi:id="_8vsAQ5U1EeaIOf0FUcQypA" name="cellsToMove==>new_value" target="_8vsARZU1EeaIOf0FUcQypA" source="_8vsAQpU1EeaIOf0FUcQypA"/>
+          <executableNode xmi:type="uml:AddVariableValueAction" xmi:id="_8vsAQJU1EeaIOf0FUcQypA" name="fetch(signal)" variable="_8vrZM5U1EeaIOf0FUcQypA" isReplaceAll="true">
+            <value xmi:id="_8vsAQZU1EeaIOf0FUcQypA" name="new_value" incoming="_8vrZN5U1EeaIOf0FUcQypA" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+          </executableNode>
+          <executableNode xmi:type="uml:AddVariableValueAction" xmi:id="_8vsARJU1EeaIOf0FUcQypA" name="fetch(cellsToMove)" variable="_8vrZNJU1EeaIOf0FUcQypA" isReplaceAll="true">
+            <value xmi:id="_8vsARZU1EeaIOf0FUcQypA" name="new_value" incoming="_8vsAQ5U1EeaIOf0FUcQypA">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </value>
+          </executableNode>
+        </node>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_8vrZNpU1EeaIOf0FUcQypA" name="signal" outgoing="_8vrZN5U1EeaIOf0FUcQypA" type="_8vpkAJU1EeaIOf0FUcQypA" parameter="_8vrZMJU1EeaIOf0FUcQypA"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_8vsAQpU1EeaIOf0FUcQypA" name="cellsToMove" outgoing="_8vsAQ5U1EeaIOf0FUcQypA" parameter="_8vqyIJU1EeaIOf0FUcQypA">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </node>
+        <node xmi:type="uml:SequenceNode" xmi:id="_8vsARpU1EeaIOf0FUcQypA" name="#body" incoming="_8vtOYJU1EeaIOf0FUcQypA" outgoing="_8vtOYZU1EeaIOf0FUcQypA">
+          <executableNode xmi:type="uml:SequenceNode" xmi:id="_8vsnUJU1EeaIOf0FUcQypA" name="this.cellsToMove=cellsToMove;">
+            <executableNode xmi:type="uml:SequenceNode" xmi:id="_8vsnUZU1EeaIOf0FUcQypA" name="this.cellsToMove=cellsToMove">
+              <edge xmi:type="uml:ObjectFlow" xmi:id="_8vsnUpU1EeaIOf0FUcQypA" name="this==>base" target="_8vsnWZU1EeaIOf0FUcQypA" source="_8vsnV5U1EeaIOf0FUcQypA"/>
+              <edge xmi:type="uml:ObjectFlow" xmi:id="_8vsnU5U1EeaIOf0FUcQypA" name="this==>base" target="_8vsnXpU1EeaIOf0FUcQypA" source="_8vsnV5U1EeaIOf0FUcQypA"/>
+              <edge xmi:type="uml:ObjectFlow" xmi:id="_8vsnVJU1EeaIOf0FUcQypA" name="cellsToMove==>new_value" target="_8vsnX5U1EeaIOf0FUcQypA" source="_8vsnXJU1EeaIOf0FUcQypA"/>
+              <edge xmi:type="uml:ObjectFlow" xmi:id="_8vsnVZU1EeaIOf0FUcQypA" name="this==>base" target="_8vsnYZU1EeaIOf0FUcQypA" source="_8vsnV5U1EeaIOf0FUcQypA"/>
+              <executableNode xmi:type="uml:ReadSelfAction" xmi:id="_8vsnVpU1EeaIOf0FUcQypA" name="this">
+                <result xmi:id="_8vsnV5U1EeaIOf0FUcQypA" name="this" outgoing="_8vsnUpU1EeaIOf0FUcQypA _8vsnU5U1EeaIOf0FUcQypA _8vsnVZU1EeaIOf0FUcQypA" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+              </executableNode>
+              <executableNode xmi:type="uml:ReadStructuralFeatureAction" xmi:id="_8vsnWJU1EeaIOf0FUcQypA" name="this.cellsToMove" structuralFeature="_8vpkAZU1EeaIOf0FUcQypA">
+                <object xmi:id="_8vsnWZU1EeaIOf0FUcQypA" name="base" incoming="_8vsnUpU1EeaIOf0FUcQypA" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+                <result xmi:id="_8vsnWpU1EeaIOf0FUcQypA" name="this.cellsToMove">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </result>
+              </executableNode>
+              <executableNode xmi:type="uml:ReadVariableAction" xmi:id="_8vsnW5U1EeaIOf0FUcQypA" name="cellsToMove" variable="_8vrZNJU1EeaIOf0FUcQypA">
+                <result xmi:id="_8vsnXJU1EeaIOf0FUcQypA" name="cellsToMove" outgoing="_8vsnVJU1EeaIOf0FUcQypA">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </result>
+              </executableNode>
+              <executableNode xmi:type="uml:AddStructuralFeatureValueAction" xmi:id="_8vsnXZU1EeaIOf0FUcQypA" name="this.cellsToMove=cellsToMove" structuralFeature="_8vpkAZU1EeaIOf0FUcQypA" isReplaceAll="true">
+                <object xmi:id="_8vsnXpU1EeaIOf0FUcQypA" name="base" incoming="_8vsnU5U1EeaIOf0FUcQypA" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+                <value xmi:id="_8vsnX5U1EeaIOf0FUcQypA" name="new_value" incoming="_8vsnVJU1EeaIOf0FUcQypA">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </value>
+              </executableNode>
+              <executableNode xmi:type="uml:ReadStructuralFeatureAction" xmi:id="_8vsnYJU1EeaIOf0FUcQypA" name="this.cellsToMove" structuralFeature="_8vpkAZU1EeaIOf0FUcQypA">
+                <object xmi:id="_8vsnYZU1EeaIOf0FUcQypA" name="base" incoming="_8vsnVZU1EeaIOf0FUcQypA" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+                <result xmi:id="_8vsnYpU1EeaIOf0FUcQypA" name="this.cellsToMove">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </result>
+              </executableNode>
+            </executableNode>
+          </executableNode>
+        </node>
+        <node xmi:type="uml:SequenceNode" xmi:id="_8vsnY5U1EeaIOf0FUcQypA" name="#finish" incoming="_8vtOYZU1EeaIOf0FUcQypA" outgoing="_8vtOYpU1EeaIOf0FUcQypA"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_8vsnZJU1EeaIOf0FUcQypA" name="#final" incoming="_8vtOYpU1EeaIOf0FUcQypA"/>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8vqLEZU1EeaIOf0FUcQypA" name="Move" isStatic="true" method="_8vrZMZU1EeaIOf0FUcQypA">
+        <ownedParameter xmi:id="_8vrZMJU1EeaIOf0FUcQypA" name="signal" type="_8vpkAJU1EeaIOf0FUcQypA"/>
+        <ownedParameter xmi:id="_8vqyIJU1EeaIOf0FUcQypA" name="cellsToMove">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_8vvDkJU1EeaIOf0FUcQypA" name="NewCellAdded"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_8vvDkZU1EeaIOf0FUcQypA" name="NewCellAdded" signal="_8vvDkJU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8vvDkpU1EeaIOf0FUcQypA" name="#NewCellAdded_factory">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_8vvqoZU1EeaIOf0FUcQypA" name="NewCellAdded" specification="_8vvDk5U1EeaIOf0FUcQypA"/>
+      <ownedOperation xmi:id="_8vvDk5U1EeaIOf0FUcQypA" name="NewCellAdded" isStatic="true" method="_8vvqoZU1EeaIOf0FUcQypA">
+        <ownedParameter xmi:id="_8vvqoJU1EeaIOf0FUcQypA" name="signal" type="_8vvDkJU1EeaIOf0FUcQypA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8v0jIJU1EeaIOf0FUcQypA" name="Player" classifierBehavior="_8v1KMJU1EeaIOf0FUcQypA">
+      <ownedAttribute xmi:id="_8v0jIZU1EeaIOf0FUcQypA" name="game" type="_8u5WEJU1EeaIOf0FUcQypA" association="_8vVa8JU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8v0jIpU1EeaIOf0FUcQypA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8v0jI5U1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8v0jJJU1EeaIOf0FUcQypA" name="numberOfCells">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8v0jJZU1EeaIOf0FUcQypA" name="numberOfDoubles">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8v0jJpU1EeaIOf0FUcQypA" name="pos">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8v1KMJU1EeaIOf0FUcQypA" name="Player">
+        <region xmi:id="_8v1KMZU1EeaIOf0FUcQypA" name="Player">
+          <transition xmi:id="_8v1KNJU1EeaIOf0FUcQypA" name="Initialize" source="_8v1KMpU1EeaIOf0FUcQypA" target="_8v1KM5U1EeaIOf0FUcQypA"/>
+          <transition xmi:id="_8v1xQJU1EeaIOf0FUcQypA" name="MakeAMove" source="_8v1KM5U1EeaIOf0FUcQypA" target="_8v1KM5U1EeaIOf0FUcQypA">
+            <trigger xmi:id="_8v1xQZU1EeaIOf0FUcQypA" name="Move_trigger" event="_8vpkApU1EeaIOf0FUcQypA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8v1KMpU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8v1KM5U1EeaIOf0FUcQypA" name="Playing"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8v0jJ5U1EeaIOf0FUcQypA" name="Player"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8v4NgJU1EeaIOf0FUcQypA" name="StartCell" classifierBehavior="_8v40kJU1EeaIOf0FUcQypA">
+      <generalization xmi:id="_8v4Ng5U1EeaIOf0FUcQypA" general="_8uBzYJU1EeaIOf0FUcQypA"/>
+      <ownedAttribute xmi:id="_8v7Q05U1EeaIOf0FUcQypA" name="board" type="_8tV24JU1EeaIOf0FUcQypA" association="_8v6pwJU1EeaIOf0FUcQypA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8v7Q1JU1EeaIOf0FUcQypA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8v7Q1ZU1EeaIOf0FUcQypA" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8v40kJU1EeaIOf0FUcQypA" name="StartCell">
+        <region xmi:id="_8v40kZU1EeaIOf0FUcQypA" name="StartCell">
+          <transition xmi:id="_8v40lJU1EeaIOf0FUcQypA" name="Initialize" source="_8v40kpU1EeaIOf0FUcQypA" target="_8v40k5U1EeaIOf0FUcQypA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8v40kpU1EeaIOf0FUcQypA" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8v40k5U1EeaIOf0FUcQypA" name="New"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_8v4NgZU1EeaIOf0FUcQypA" name="StartCell"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8v6pwJU1EeaIOf0FUcQypA" name="StartCellsOnBoard" memberEnd="_8v7Q0JU1EeaIOf0FUcQypA _8v7Q05U1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_8v8e8JU1EeaIOf0FUcQypA" name="ThrowDice"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_8v8e8ZU1EeaIOf0FUcQypA" name="ThrowDice" signal="_8v8e8JU1EeaIOf0FUcQypA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8v8e8pU1EeaIOf0FUcQypA" name="#ThrowDice_factory">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_8v9GAZU1EeaIOf0FUcQypA" name="ThrowDice" specification="_8v8e85U1EeaIOf0FUcQypA"/>
+      <ownedOperation xmi:id="_8v8e85U1EeaIOf0FUcQypA" name="ThrowDice" isStatic="true" method="_8v9GAZU1EeaIOf0FUcQypA">
+        <ownedParameter xmi:id="_8v9GAJU1EeaIOf0FUcQypA" name="signal" type="_8v8e8JU1EeaIOf0FUcQypA"/>
+      </ownedOperation>
+    </packagedElement>
+    <profileApplication xmi:id="_8rXg8JU1EeaIOf0FUcQypA">
+      <eAnnotations xmi:id="_8rXg8ZU1EeaIOf0FUcQypA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <standard:Create xmi:id="_8t7swJU1EeaIOf0FUcQypA" base_BehavioralFeature="_8tm8opU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8t_XIpU1EeaIOf0FUcQypA" base_BehavioralFeature="_8t-wEpU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8uBzZJU1EeaIOf0FUcQypA" base_BehavioralFeature="_8uBzYpU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8uGE0ZU1EeaIOf0FUcQypA" base_BehavioralFeature="_8uFdwZU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8uPOwpU1EeaIOf0FUcQypA" base_BehavioralFeature="_8uPOwJU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8udRMJU1EeaIOf0FUcQypA" base_BehavioralFeature="_8ucqIpU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8uz2gpU1EeaIOf0FUcQypA" base_BehavioralFeature="_8uqskZU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8vOGMZU1EeaIOf0FUcQypA" base_BehavioralFeature="_8vEVMpU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8vZsYpU1EeaIOf0FUcQypA" base_BehavioralFeature="_8vZsYZU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8vhoMJU1EeaIOf0FUcQypA" base_BehavioralFeature="_8vhBIZU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8vqyIZU1EeaIOf0FUcQypA" base_BehavioralFeature="_8vqLEZU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8vvDlJU1EeaIOf0FUcQypA" base_BehavioralFeature="_8vvDk5U1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8v0jKJU1EeaIOf0FUcQypA" base_BehavioralFeature="_8v0jJ5U1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8v4NgpU1EeaIOf0FUcQypA" base_BehavioralFeature="_8v4NgZU1EeaIOf0FUcQypA"/>
+  <standard:Create xmi:id="_8v8e9JU1EeaIOf0FUcQypA" base_BehavioralFeature="_8v8e85U1EeaIOf0FUcQypA"/>
+</xmi:XMI>
