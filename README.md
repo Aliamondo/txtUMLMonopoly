@@ -15,3 +15,5 @@ Go to Eclipse and do the following:
 
 Build the project using `Project -> Build Project` and run it. If there are any issues, use
 `Project -> Clean...`, then build and run the project again.
+
+![alt text](https://github.com/Aliamondo/txtUMLMonopoly/blob/master/gen/screenshot.png "Screenshot of txtUMLMonopoly")
